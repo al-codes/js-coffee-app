@@ -16,10 +16,10 @@ const resetCart = () => {
 const incrementCartTotal = (price) => {
   const cartTotal = $('#cart-total');
 
-  let total = Number(cartTotal.html());
+  let total = Number(cartTotal.html()); //increments price 
   total += price;
 
-  cartTotal.html(total.toFixed(2));
+  cartTotal.html(total.toFixed(2)); //two decimal places
 };
 
 const incrementCoffeeSold = (amountSold) => {
@@ -39,13 +39,13 @@ const setProgressAndStatus = (progressVal, statusMsg) => {
 // Add your event handlers below.
 //
 $('.add-to-order').on('click', () => {
-  addItemToCart('Coffee');
-  incrementCartTotal(1.50);
+  addItemToCart('Coffee'); 
+  incrementCartTotal(1.50); // Adds 1.50 to amount sold
 });
 
 $('#place-order').on('click', () => {
-  incrementCoffeeSold($('#cart-items').children().length);
+  incrementCoffeeSold($('#cart-items').children().length); //Adds coffee sold to cart
   
-  resetCart();
+  resetCart(); // Empties cart 
 });
 
